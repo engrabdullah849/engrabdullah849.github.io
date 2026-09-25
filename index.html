@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Abdullah | Mechanical Design Engineer</title>
+<meta name="description" content="Muhammad Abdullah — Mechanical Design Engineer portfolio. CAD, FEA, manufacturing and product development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0c0e; --bg-alt:#131417; --card:#17181c; --line:#26282d;
+    --ink:#f2f0ea; --muted:#9a9ca3; --accent:#ef8b3a; --accent-dim:#3a2a1c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;}
+  h1,h2,h3,.brand{font-family:'Sora',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  section{padding:88px 0;border-top:1px solid var(--line);}
+  section:first-of-type{border-top:none;}
+  .kicker{color:var(--accent);font-weight:600;font-size:13px;letter-spacing:.04em;margin-bottom:10px;}
+  h2{font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:16px;}
+  .lede{color:var(--muted);max-width:640px;font-size:16px;}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:50;background:rgba(11,12,14,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;}
+  .brand .mark{width:34px;height:34px;border:1.5px solid var(--accent);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;}
+  .navlinks{display:flex;gap:28px;font-size:14px;color:var(--muted);}
+  .navlinks a:hover{color:var(--ink);}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);padding:8px 10px;font-size:18px;}
+  @media(max-width:760px){.navlinks{display:none;}.menu-btn{display:block;}}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:72px 0 88px;}
+  .hero-photo{border:1px solid var(--line);position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg-alt);}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;}
+  .hero h1{font-size:clamp(38px,6vw,60px);line-height:1.05;font-weight:800;}
+  .hero h1 span{color:var(--accent);}
+  .role{font-size:20px;color:var(--muted);margin:14px 0 18px;}
+  .meta-row{display:flex;gap:36px;margin:26px 0;font-size:14px;flex-wrap:wrap;}
+  .meta-row div span{display:block;color:var(--muted);font-size:12px;margin-bottom:2px;}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
+  .btn{padding:13px 22px;font-size:14px;font-weight:600;border:1px solid var(--accent);}
+  .btn.solid{background:var(--accent);color:#0b0c0e;}
+  .btn.ghost{border-color:var(--line);color:var(--ink);}
+  @media(max-width:760px){.hero{grid-template-columns:1fr;}.hero-photo{max-width:280px;margin:0 auto;order:-1;}}
+
+  /* capability grid */
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
+  .cap{background:var(--card);border:1px solid var(--line);padding:20px;font-size:14px;font-weight:600;}
+  @media(max-width:760px){.grid4{grid-template-columns:repeat(2,1fr);}}
+
+  /* timeline */
+  .tl{position:relative;margin-top:30px;padding-left:26px;border-left:2px solid var(--line);}
+  .tl-item{position:relative;padding-bottom:34px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{content:"";position:absolute;left:-32px;top:4px;width:10px;height:10px;background:var(--accent);border-radius:50%;}
+  .tl-date{color:var(--accent);font-size:13px;font-weight:600;}
+  .tl-item h3{font-size:19px;margin:4px 0 2px;}
+  .tl-item .org{color:var(--muted);font-size:14px;margin-bottom:6px;}
+
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px;}
+  .edu-card{background:var(--card);border:1px solid var(--line);padding:22px;}
+  .edu-card .yr{color:var(--accent);font-size:13px;font-weight:600;margin-bottom:6px;}
+  @media(max-width:700px){.edu-grid{grid-template-columns:1fr;}}
+
+  /* FYP */
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;}
+  .stat{border:1px solid var(--line);padding:18px;text-align:center;background:var(--card);}
+  .stat b{display:block;color:var(--accent);font-size:26px;font-family:'Sora',sans-serif;}
+  .stat span{font-size:13px;color:var(--muted);}
+  .fyp-shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:24px;}
+  .fyp-shots img{border:1px solid var(--line);}
+  @media(max-width:700px){.stat-row,.fyp-shots{grid-template-columns:1fr;}}
+
+  /* projects */
+  .proj{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding:44px 0;border-top:1px solid var(--line);}
+  .proj:first-of-type{border-top:none;}
+  .proj-num{color:var(--accent);font-weight:700;font-family:'Sora',sans-serif;}
+  .proj h3{font-size:24px;margin:8px 0 10px;}
+  .proj p{color:var(--muted);font-size:15px;margin-bottom:14px;}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;}
+  .tag{border:1px solid var(--line);color:var(--muted);font-size:12px;padding:5px 10px;}
+  .shots{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .shots img{border:1px solid var(--line);aspect-ratio:1/1;object-fit:cover;}
+  .shots.single img{grid-column:1/-1;aspect-ratio:16/9;}
+  @media(max-width:760px){.proj{grid-template-columns:1fr;}.proj.reverse .shots{order:-1;}}
+
+  footer{padding:60px 0 30px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+  .contact-grid h2{font-size:clamp(30px,5vw,44px);}
+  .clinks div{border-bottom:1px solid var(--line);padding:16px 0;}
+  .clinks span{display:block;color:var(--accent);font-size:12px;font-weight:600;margin-bottom:4px;}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand"><span class="mark">MA</span> MUHAMMAD ABDULLAH</div>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#fyp">FYP</a>
+      <a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </div>
+    <button class="menu-btn" onclick="document.querySelector('.navlinks').style.display='flex'">☰</button>
+  </nav>
+</header>
+
+<section class="hero wrap" id="home">
+  <div>
+    <div class="kicker">MECHANICAL DESIGN PORTFOLIO / 2026</div>
+    <h1>Muhammad<br><span>Abdullah.</span></h1>
+    <div class="role">Mechanical Design Engineer</div>
+    <p class="lede">Mechanical design, CAD modelling, CNC manufacturing, fabrication, sheet metal work and product development — precise enough for engineering drawings, practical enough for the shop floor.</p>
+    <div class="meta-row">
+      <div><span>CURRENT ROLE</span>Mechanical Design Engineer, Tech Valley</div>
+      <div><span>LOCATION</span>Rawalpindi, Pakistan</div>
+    </div>
+    <div class="btn-row">
+      <a class="btn solid" href="Mechanical-Design-Portfolio.pdf">Download Portfolio PDF</a>
+      <a class="btn ghost" href="#projects">View Projects</a>
+      <a class="btn ghost" href="#contact">Contact Me</a>
+    </div>
+  </div>
+  <div class="hero-photo"><img src="assets/my_picture.jpeg" alt="Muhammad Abdullah"></div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="kicker">PROFILE / ABOUT</div>
+    <h2>Design. Validate. Manufacture.</h2>
+    <p class="lede">Mechanical design engineer with an emphasis on mechanisms, sheet metal design and large assemblies in SolidWorks. Experienced in CAD modelling, FEA (Ansys), engineering drawings, fabrication, machining preparation and prototyping. My work combines design intent with real-world fabrication, assembly and analysis considerations.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="kicker">CAPABILITY / SKILLS</div>
+    <h2>Capability Stack</h2>
+    <div class="grid4">
+      <div class="cap">SolidWorks</div><div class="cap">AutoCAD</div>
+      <div class="cap">ANSYS Workbench</div><div class="cap">Structural &amp; Thermal Analysis</div>
+      <div class="cap">CNC / G-M Code</div><div class="cap">Sheet Metal Work</div>
+      <div class="cap">Engineering Drawings</div><div class="cap">Prototype Development</div>
+      <div class="cap">Mechanical Assemblies</div><div class="cap">Fabrication</div>
+      <div class="cap">RDWorks</div><div class="cap">Project Management</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="kicker">02 / EXPERIENCE</div>
+    <h2>Professional Background</h2>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-date">15 JUL 2026 — PRESENT</div><h3>Mechanical Design Engineer</h3><div class="org">Tech Valley, Islamabad</div><p class="lede">Designed complex systems such as the ESD Storage Cabinet and MTS System in SolidWorks, with involvement in manufacturing.</p></div>
+      <div class="tl-item"><div class="tl-date">AUG 2025 — JUL 2026</div><h3>Final Year Project — ARDIC</h3><div class="org">Heavy Industries Taxila (HIT)</div><p class="lede">Design, simulation and engineering analysis on the Al-Zarrar hull tank model.</p></div>
+      <div class="tl-item"><div class="tl-date">JUN 2025 — JUL 2025</div><h3>Intern</h3><div class="org">DESCOM, HIT</div></div>
+      <div class="tl-item"><div class="tl-date">JUN 2024 — JUL 2024</div><h3>Intern</h3><div class="org">Heavy Mechanical Complex (HMC)</div></div>
+    </div>
+
+    <div class="edu-grid">
+      <div class="edu-card"><div class="yr">2022–2026</div><h3>BS Mechanical Engineering</h3><p class="lede">HITEC University Taxila · CGPA 3.5/4.0</p></div>
+      <div class="edu-card"><div class="yr">2020–2022</div><h3>F.Sc Pre-Engineering</h3><p class="lede">The Scholars Science College, Wah Cantt · 80%</p></div>
+      <div class="edu-card" style="grid-column:1/-1"><div class="yr">CERTIFICATION</div><h3>FEA Using ANSYS</h3><p class="lede">Finite element analysis training and application.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="fyp">
+  <div class="wrap">
+    <div class="kicker">03 / FINAL YEAR PROJECT</div>
+    <h2>Assessment of Welding Quality on RHA Plates</h2>
+    <p class="lede">Complete Al-Zarrar hull tank model developed in SolidWorks and evaluated through ANSYS. A 3-pass welding approach was assessed across different welding speeds and currents to study residual stress and deformation.</p>
+    <div class="stat-row">
+      <div class="stat"><b>13%</b><span>internal stress reduction</span></div>
+      <div class="stat"><b>&lt;1 mm</b><span>deformation</span></div>
+      <div class="stat"><b>3-pass</b><span>welding approach</span></div>
+    </div>
+    <div class="fyp-shots">
+      <img src="assets/3D_Model_of_Tank.png" alt="3D model of tank">
+      <img src="assets/Stresses_of_Tank.png" alt="Tank stress simulation">
+      <img src="assets/Deformation_of_tank.png" alt="Tank deformation simulation">
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="kicker">04 / SOLIDWORKS PROFESSIONAL PROJECTS</div>
+    <h2>Tech Valley Project Work</h2>
+
+    <div class="proj">
+      <div><span class="proj-num">01</span><h3>ESD Storage Cabinet Design</h3>
+        <p>Designed an ESD storage cabinet using individual sheet-metal components and a full assembly. Fabricated parts were joined using rivets.</p>
+        <div class="tags"><span class="tag">SolidWorks</span><span class="tag">Sheet Metal</span><span class="tag">Riveted Assembly</span></div>
+      </div>
+      <div class="shots"><img src="assets/ESD_Storage_Cabinet_Fiq_2.png"><img src="assets/ESD_Storage_Cabinet_fiq-3.png"></div>
+    </div>
+
+    <div class="proj reverse">
+      <div class="shots"><img src="assets/MTS_Head_Assembly_fig-2.png"><img src="assets/MTS_Overall_Assembly_fig-3.png"></div>
+      <div><span class="proj-num">02</span><h3>Advanced MTS Systems Design</h3>
+        <p>Mechanical design and integration for a mobile tracking platform covering automated tracking, direction finding and line-of-sight communications.</p>
+        <div class="tags"><span class="tag">Mechanical Design</span><span class="tag">CAD Modelling</span><span class="tag">System Integration</span></div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div><span class="proj-num">03</span><h3>Mobile Aerospace Workshop Cabin</h3>
+        <p>3D CAD layout of a mobile aerospace workshop cabin integrated onto a heavy-duty truck chassis for field support and maintenance.</p>
+        <div class="tags"><span class="tag">3D CAD</span><span class="tag">Vehicle Integration</span></div>
+      </div>
+      <div class="shots"><img src="assets/Aerospace_Container_fig-1.png"><img src="assets/Aerospace_fig-2.png"></div>
+    </div>
+
+    <div class="proj reverse">
+      <div class="shots"><img src="assets/Gear_Assembly_fig-1.png"><img src="assets/Gear_Mechanism.png"></div>
+      <div><span class="proj-num">04</span><h3>Advanced Gear Mechanism Design</h3>
+        <p>Gear mechanism in SolidWorks for rotational movement of a slew bearing — a worm gear drives the bearing through a shaft for controlled rotation.</p>
+        <div class="tags"><span class="tag">SolidWorks</span><span class="tag">Worm Gear</span><span class="tag">Slew Bearing</span></div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div><span class="proj-num">05</span><h3>Hydraulic Cylinder Assembly Design</h3>
+        <p>Complete hydraulic cylinder assembly: piston rod, cylinder tube, gland/bushing, seal kit, rod-eye and clevis fittings, documented via exploded view.</p>
+        <div class="tags"><span class="tag">SolidWorks</span><span class="tag">Mechanical Assembly</span><span class="tag">Sealing System</span></div>
+      </div>
+      <div class="shots"><img src="assets/Hydraulic_Cylinder_Assembly.png"><img src="assets/Hydraulic_Cylinder_Assembly_1.png"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="kicker">AVAILABLE FOR MECHANICAL DESIGN OPPORTUNITIES</div>
+      <h2>Let's turn a complex requirement into a working design.</h2>
+    </div>
+    <div class="clinks">
+      <div><span>EMAIL</span><a href="mailto:mabdullahsattar.me@gmail.com">mabdullahsattar.me@gmail.com</a></div>
+      <div><span>WHATSAPP</span><a href="https://wa.me/923170035624">+92 317 0035624</a></div>
+      <div><span>LINKEDIN</span><a href="https://www.linkedin.com/in/m-abdullahs">m-abdullahs</a></div>
+      <div><span>GITHUB</span><a href="https://github.com/engrabdullah849">engrabdullah849</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>Muhammad Abdullah · Mechanical Design Engineer · Pakistan</footer>
+
+</body>
+</html>
